@@ -38,7 +38,6 @@ export const styles = (theme: Object) => ({
   },
   // For SwitchBase
   default: {
-    zIndex: 1,
     color: theme.palette.type === 'light' ? theme.palette.grey[50] : theme.palette.grey[400],
     transition: theme.transitions.create('transform', {
       duration: theme.transitions.duration.shortest,
@@ -137,6 +136,7 @@ function Switch(props: ProvidedProps & Props) {
 
   return (
     <div className={classNames(classes.root, className)}>
+      <span className={classes.bar} />
       <SwitchBase
         icon={icon}
         classes={{
@@ -147,7 +147,6 @@ function Switch(props: ProvidedProps & Props) {
         checkedIcon={icon}
         {...other}
       />
-      <span className={classes.bar} />
     </div>
   );
 }
